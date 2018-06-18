@@ -11,6 +11,12 @@ describe Braze::Users do
     end
   end
 
+  describe 'Fetch Profiles' do
+    it 'return a profile object for an existing email address' do
+      expect(Braze::Users.fetch_profiles(@braze_api, ENV['BRAZE_EMAIL']).first).to be_a Braze::Profile
+    end
+  end
+
   describe 'Upsert Profile' do
     it 'returns a json response for a valid request' do
       attributes = {
