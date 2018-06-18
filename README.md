@@ -13,7 +13,7 @@ Braze::Api.new(api_key: '<your api key>', endpoint_url: '<your endpoint url>')
 ```
 
 Once initialized, you can call API functions using this object. For instance, to
-find all of the export ids associated to a particular email in Braze, use:
+find all of the external ids associated to a particular email in Braze, use:
 
 ```
 braze_api = Braze::Api.new(api_key: '<your api key>', endpoint_url: '<your endpoint url>')
