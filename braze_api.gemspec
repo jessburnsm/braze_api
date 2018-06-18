@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description   = 'Simple API Wrapper for basic Braze API Functions'
   s.authors       = ['Jessica Burns']
   s.email         = 'jessburnsm@gmail.com'
-  s.files         = ['lib/braze_api.rb', 'lib/braze/api.rb', 'lib/braze/users.rb']
+  s.files         = ['lib/braze_api.rb', 'lib/braze/api.rb', 'lib/braze/users.rb', 'lib/braze/models/profile.rb']
   s.license       = 'MIT'
   s.add_dependency('httparty')
   s.add_dependency('rake')
