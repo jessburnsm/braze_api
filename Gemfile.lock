@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    braze_api (1.0.0)
+    braze_api (1.0.1)
       httparty
       rake
       rspec

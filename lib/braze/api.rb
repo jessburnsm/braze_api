@@ -9,11 +9,9 @@ module Braze
 
     def execute(route, options = {})
       process_api_response(
-        JSON.parse(
-          HTTParty.post(
-            @endpoint_url + route,
-            query: { api_key: @api_key }.merge(options)
-          ).to_s, quirks_mode: true
+        HTTParty.post(
+          @endpoint_url + route,
+          query: { api_key: @api_key }.merge(options)
         )
       )
     end
