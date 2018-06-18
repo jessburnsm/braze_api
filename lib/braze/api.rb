@@ -13,7 +13,7 @@ module Braze
           HTTParty.post(
             @endpoint_url + route,
             query: { api_key: @api_key }.merge(options)
-          ).to_s
+          ).to_s, quirks_mode: true
         )
       )
     end
