@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'braze_api'
-  s.version       = '1.0.2'
+  s.version       = '1.0.3'
   s.date          = '2018-06-07'
   s.summary       = 'Braze API Wrapper'
   s.description   = 'Simple API Wrapper for basic Braze API Functions'

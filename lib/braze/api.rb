@@ -11,7 +11,8 @@ module Braze
       process_api_response(
         HTTParty.post(
           @endpoint_url + route,
-          query: { api_key: @api_key }.merge(options)
+          body: { api_key: @api_key }.merge(options).to_json,
+          headers: { 'Content-Type' => 'application/json' }
         )
       )
     end
