@@ -13,6 +13,7 @@ module Braze
     def initialize(email_address, external_id = nil, first_name = nil, last_name = nil)
       @email = email_address
       @marketing_site_updated = Time.now.iso8601
+      @updated = @marketing_site_updated
       @first_name = first_name unless first_name.to_s.empty?
       @last_name = last_name unless last_name.to_s.empty?
 
@@ -44,7 +45,6 @@ module Braze
       @external_id = Digest::SHA256.hexdigest(@email.downcase)
       @email_hash = @external_id
       @created = @marketing_site_updated
-      @updated = @marketing_site_updated
       @system_of_origin = 'Marketing Site'
       @email_subscribe = 'subscribed'
     end
