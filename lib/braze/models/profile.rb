@@ -4,14 +4,14 @@ module Braze
     require 'time'
 
     attr_reader :email, :external_id, :email_hash, :first_name, :last_name
-    attr_accessor :created, :device_signup, :email_subscribe, :newsletter_signup,
+    attr_accessor :created, :device_signup, :device_signup_updated,
+                  :email_subscribe, :newsletter_signup, :newsletter_signup_updated,
                   :marketing_site_updated, :ps4_notification, :student_sub_form,
                   :subscription_status, :system_of_origin, :updated,
                   :university_name, :xbox_notification
 
     def initialize(email_address, external_id = nil, first_name = nil, last_name = nil)
       @email = email_address
-      @updated = Time.now.iso8601
       @marketing_site_updated = Time.now.iso8601
       @first_name = first_name unless first_name.to_s.empty?
       @last_name = last_name unless last_name.to_s.empty?
@@ -43,7 +43,8 @@ module Braze
     def establish_new_profile
       @external_id = Digest::SHA256.hexdigest(@email.downcase)
       @email_hash = @external_id
-      @created = Time.now.iso8601
+      @created = @marketing_site_updated
+      @updated = @marketing_site_updated
       @system_of_origin = 'Marketing Site'
       @email_subscribe = 'subscribed'
     end
